@@ -12,4 +12,9 @@ List data = [
     img: "assets/images/login.jpg",
     harga: "Rp 16000",
   ),
+  Makanan(
+    'Bakso solo',
+    img: "assets/images/solo.jpeg",
+    harga: "Rp 15000",
+  ),
 ];

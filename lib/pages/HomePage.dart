@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  FadeAnimation(1, Text('Food Delivery', style: TextStyle(color: Colors.grey[80], fontWeight: FontWeight.bold, fontSize: 30),)),
+                  FadeAnimation(1, Text('Bakso Barokah', style: TextStyle(color: Colors.grey[80], fontWeight: FontWeight.bold, fontSize: 30),)),
                   SizedBox(height: 20,),
                   Container(
                     height: 50,
@@ -43,11 +43,10 @@ class _HomePageState extends State<HomePage> {
 
 
                       children: <Widget>[
-                        FadeAnimation(1, makeCategory(isActive: true, title: 'Pizaa')),
-                        FadeAnimation(1.3, makeCategory(isActive: false, title: 'Burgers')),
-                        FadeAnimation(1.4, makeCategory(isActive: false, title: 'Kebab')),
-                        FadeAnimation(1.5, makeCategory(isActive: false, title: 'Desert')),
-                        FadeAnimation(1.6, makeCategory(isActive: false, title: 'Salad')),
+                        FadeAnimation(1, makeCategory(isActive: true, title: 'Makanan')),
+                        FadeAnimation(1.3, makeCategory(isActive: false, title: 'Minuman')),
+                        FadeAnimation(1.4, makeCategory(isActive: false, title: 'Mie Ayam')),
+                        
                       ],
                     ),
                   ),

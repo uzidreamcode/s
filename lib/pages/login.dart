@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/HomePage.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +13,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   int activeIndex = 0;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _textController1 = TextEditingController(),
+      _textController2 = TextEditingController();
+
 
   @override
   void initState() {
@@ -93,10 +98,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 40,),
                 TextField(
+                  controller: _textController1,
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(0.0),
-                    labelText: 'Email',
+                    labelText: 'Username',
                     hintText: 'Username or e-mail',
                     labelStyle: TextStyle(
                       color: Colors.black,
@@ -124,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: _textController2,
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(0.0),
@@ -164,7 +171,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 30,),
                 MaterialButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    if (_textController2.text == "admin" && _textController1.text == "admin") {
+                      //key.currentState.showSnackBar(buildSnackBar('login Succesfull',Colors.greenAccent[700],Icons.check));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                    }else{
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Username atau password salah')));
+                    }
+                  },
                   height: 45,
                   color: Colors.black,
                   child: Text("Login", style: TextStyle(color: Colors.white, fontSize: 16.0),),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/HomePage.dart';
 import 'package:lottie/lottie.dart';
+import 'package:food_app/pages/login.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -88,6 +89,26 @@ class _ProfileState extends State<Profile> {
 
                                     SizedBox(
                                       width: 8,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFE4395F),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(20),
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12,),
+                                      child: Center(
+                                        child: IconButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => LoginPage()),
+                                            );
+                                          },
+                                          icon: Icon(Icons.logout, color: Colors.grey[800],),
+                                        ),
+                                      ),
                                     ),
 
 

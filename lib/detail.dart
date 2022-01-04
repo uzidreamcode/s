@@ -53,18 +53,7 @@ class Detail extends StatelessWidget {
                             Navigator.pop(context);
                           },
                         ),
-                        Material(
-                          elevation: 4.0,
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Container(
-                            width: 40.0,
-                            height: 40.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.0)),
-                            child: Icon(Icons.favorite, color: Colors.red),
-                          ),
-                        )
+
                       ],
                     ),
                   ),
@@ -106,7 +95,7 @@ class Detail extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width / 2 + 100.0,
                       child: Text(
-                          'asui'),
+                          Makanan.deskripsi),
                     ),
                     // Padding(
                     //   padding: const EdgeInsets.only(right: 16.10),
@@ -157,13 +146,7 @@ class Detail extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              Row(
-                children: <Widget>[
 
-                  materialItems(Icons.book, 'x60%'),
-                  materialItems(Icons.timeline, 'x10%'),
-                ],
-              ),
             ],
           )
         ],
@@ -197,10 +180,7 @@ class Detail extends StatelessWidget {
                   height: 50.0,
                   width: 50.0,
                   color: Colors.white,
-                  child: Icon(
-                    Icons.account_box,
-                    color: Colors.grey,
-                  ),
+
                 ),
 
               ]),

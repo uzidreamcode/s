@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app/animations/FadeAnimation.dart';
 import 'package:food_app/pages/data.dart';
 import 'package:food_app/detail.dart';
+import 'package:food_app/pages/profil.dart';
 class HomePage extends StatefulWidget {
 
   @override
@@ -20,9 +21,15 @@ class _HomePageState extends State<HomePage> {
         leading: Icon(null),
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.shopping_basket, color: Colors.grey[800],),
-          )
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+            },
+            icon: Icon(Icons.account_circle_rounded, color: Colors.grey[800],),
+          ),
+
         ],
       ),
       body: SafeArea(
@@ -46,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                         FadeAnimation(1, makeCategory(isActive: true, title: 'Makanan')),
                         FadeAnimation(1.3, makeCategory(isActive: false, title: 'Minuman')),
                         FadeAnimation(1.4, makeCategory(isActive: false, title: 'Mie Ayam')),
-                        
+
                       ],
                     ),
                   ),
